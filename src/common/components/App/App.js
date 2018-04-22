@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Home } from '../'
+import { Home, File, Header } from '../'
 
 const App = () => (
-	<Switch>
-		<Route exact path="/" component={Home} />
-	</Switch>
+	<Fragment>
+		<Header />
+		<Switch>
+			<Route exact path="/" component={Home} />
+			<Route path="/file/:id" component={File} />
+		</Switch>
+	</Fragment>
 )
 
 export default App

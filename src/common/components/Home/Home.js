@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import { Upload } from '../'
 
 class Home extends Component {
 	render() {
 		return (
-			<div className="Home">
-				<div className="Home-header">
-					<h2>Welcome to Razzle</h2>
-				</div>
-			</div>
+			<Fragment>
+				<h1>Home</h1>
+				<Upload />
+			</Fragment>
 		)
 	}
 }

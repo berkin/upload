@@ -1,2 +1,5 @@
 export { default as App } from './App/App'
 export { default as Home } from './Home/Home'
+export { default as Header } from './Header/Header'
+export { default as Upload } from './Upload/Upload'
+export { default as File } from './File/File'

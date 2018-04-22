@@ -1,8 +1,6 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import configureStore from '../common/configureStore'
 import express from 'express'
 import { App } from '../common/components'
 
@@ -15,14 +13,10 @@ server
 	.get('/*', (req, res) => {
 		const context = {}
 
-		const store = configureStore()
-
 		const markup = renderToString(
-			<Provider store={store}>
-				<StaticRouter context={context} location={req.url}>
-					<App />
-				</StaticRouter>
-			</Provider>,
+			<StaticRouter context={context} location={req.url}>
+				<App />
+			</StaticRouter>,
 		)
 
 		if (context.url) {
